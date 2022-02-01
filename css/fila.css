@@ -1,0 +1,344 @@
+@charset "utf-8";
+/* 폰트 크기 root 기준값=rem */
+html { font-size: 62.5%;}
+body { font-family: "Noto Sans KR", sans-serif;}
+/* Safe Area 1300px */
+.w1300 { width: 1300px; margin: 0 auto;}
+
+#wrap {
+    width: 100%;
+}
+/* Aside PopUp */
+aside {
+    height: 56px;
+    background-color: #607bbc;
+    color: #f5f5f5;
+    font-weight: 700;
+}
+aside .top_sub {
+    padding: 0 48px 0 52px;
+    /* 플렉스 */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+aside .top_sub p {
+    font-size: 1.4rem;
+}
+aside .top_sub>p:nth-child(1){
+    margin-left: 410px;
+    line-height: 56px;
+    /* background-color: red; */
+}
+aside .top_sub>p:nth-child(2){
+    margin-left: -365px;
+    line-height: 56px;
+    /* background-color: green; */
+}
+aside .top_sub>p:nth-child(2) img {
+    vertical-align: middle;
+    margin-top: -4px;
+}
+aside .top_sub>p:nth-child(3){
+    /* background-color: blue; */
+    margin-top: 18px;
+}
+aside .top_sub>p:nth-child(3) img {
+    vertical-align: middle;
+}
+
+/* Header */
+header {}
+header .lnb_all {
+    border-bottom: 1px solid #C9C9C9;
+}
+header .root_lnb{
+    /* 플렉스 h1과 nav */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 72px;
+    background: #fff;
+    padding-left: 536px;
+    padding-top: 24px;
+}
+header .local .lnb{
+    /* 플렉스 li */
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 4px;
+    font-size: 1.2rem;
+}
+header .local .lnb li {
+    margin-left: 12px;
+}
+header .local .lnb li:nth-child(1){
+    margin-left: 0;
+}
+
+/* GNB Menu */
+header .gnb_all {
+    border-bottom: 1px solid #c9c9c9;
+}
+header .global {
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 54px;
+    line-height: 54px;
+    font-size: 1.4rem;
+}
+header .global .gnb {
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row wrap;
+}
+header .global .gnb li {
+    margin-right: 52px;
+}
+header .global .gnb li:last-child{
+    margin-right: 0;
+}
+header .global .gnb li a{
+    color: #253358 ;
+    font-weight: 600;
+}
+header .global .snb{
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1.2rem;
+}
+header .global .snb li {
+    margin-left: 28px;
+}
+header .global .snb li:first-child {
+    margin-left: 0;
+}
+header .global .snb li a{
+    color: #020202;
+    font-weight: 500;
+}
+/* 20220126 영문 폰트 추가 및 fw 수정 */
+header .global .gnb li a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+header .global .snb li a {
+    font-family: 'Nunito', sans-serif;
+    /* font-weight: 600; */
+}
+
+/* Slider */
+.slider img {
+    max-width: 100%;
+    
+}
+
+/* Contents */
+/* Section 01 */
+
+/* Contents CSS 실습확인 */
+main {}
+.md_pick {
+    /* 플렉스 */
+    display: flex;
+    margin-top: 142px;
+}
+.md_pick h3 {
+    text-align: center;
+    padding-top: 36px;
+}
+.md_pick .md_pick_area {
+    margin-top: 32px;
+    /* 포지션 */
+    position: relative;
+    left: -60px;
+    top: 0;
+    z-index: 1;
+}
+.md_pick .md_pick_area ul {
+    /* 플렉스 */
+    display: flex;
+}
+.md_pick .md_pick_area ul li {
+    margin-right: 10px;
+}
+.md_pick .md_pick_area ul li:last-child{
+    margin-right: 0;
+}
+.md_pick .md_pick_area+p {
+    padding-top: 28px;
+    text-align: right;
+    padding-right: 60px;
+}
+
+/* Section 02 실습확인 */
+.ma_fila {
+    background-color: #f3f0eb;
+    margin-top: 150px;
+}
+.ma_fila .mafila_detail {
+    /* 플렉스 */
+    display: flex;
+    /* 교차축 레이아웃 */
+    align-items: center;
+    padding-top: 88px;
+    padding-left: 100px;
+    padding-bottom: 88px;
+}
+.ma_fila .mafila_detail ul{
+    text-align: center;
+    margin-right: 67px;
+}
+.ma_fila .mafila_detail ul li{
+    margin-bottom: 14px;
+}
+.ma_fila .mafila_detail ul li:first-child{
+    margin-bottom: 36px;
+    margin-bottom: 72px;
+}
+.ma_fila .mafila_detail ul li:last-child {
+    margin-top: 64px;
+    margin-bottom: 0;
+}
+.ma_fila .mafila_detail ul li a {
+    font-size: 1.7rem;
+    color: #393939;
+    /* 호버 주기 위해 인라인블럭 */
+    display: inline-block;
+    width: 234px;
+    height: 32px;
+    line-height: 32px;
+}
+.ma_fila .mafila_detail ul li a:hover {
+    background-color: #07d4d3;
+    color: #fff;
+}
+/* 20220125 first-child 호버삭제 */
+.ma_fila .mafila_detail ul li:first-child a:hover,
+.ma_fila .mafila_detail ul li:last-child a:hover {
+    background-color: transparent;
+    /* background: none; */
+}
+/* 20220126 영문폰트 추가 */
+.ma_fila .mafila_detail li:nth-child(5) {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+}
+
+.filasns {
+    margin-top: 124px;
+    padding-left: 84px;
+}
+.filasns h2 {
+    text-align: center;
+    margin-bottom: 44px;
+}
+.filasns .fila_sns {
+    /* 플렉스 */
+    display: flex;
+}
+.filasns .fila_sns ul:first-child {
+    /* 플렉스 : column 아니어도 할 수는 있으나 연습으로 사용 */
+    display: flex;
+    flex-flow: column wrap;
+}
+.filasns .fila_sns ul:first-child li:first-child {
+    margin: 0 5px 5px 0;
+}
+.filasns .fila_sns ul:nth-child(2) li{
+    margin-right: 5px;
+
+}
+.filasns .fila_sns ul:last-child {
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row wrap;
+}
+.filasns .fila_sns ul:last-child li {
+    margin: 0 5px 5px 0;
+}
+.filasns .fila_sns ul:last-child li:nth-child(3),
+.filasns .fila_sns ul:last-child li:nth-child(6) {
+    margin-right: 0;
+}
+.filasns .fila_sns ul:last-child li:nth-child(4),
+.filasns .fila_sns ul:last-child li:nth-child(5),
+.filasns .fila_sns ul:last-child li:nth-child(6) {
+    margin-bottom: 0;
+}
+.filasns p {
+    text-align: right;
+    padding-right: 80px;
+    margin-top: 28px;
+}
+
+/* Footer CSS 실습 확인 */
+footer {
+    margin-top: 100px;
+    background-color: #1d1c2e;
+    padding-top: 24px;
+    padding-bottom: 54px;
+    line-height: 1.5;
+}
+footer .footer_total {
+    padding-left: 72px;
+    padding-right: 68px;
+    /* 플렉스 */
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer_left, footer .footer_right {
+    margin-top: 40px;
+}
+footer .footer_gnb {
+    color: #eeeef0;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    /* 플렉스 */
+    display: flex;
+}
+footer .footer_info {
+    font-size: 1.2rem;
+    color: #9a9c9b;
+    font-weight: 400;
+}
+footer .footer_escrow {
+    margin-top: 26px;
+    /* 플렉스 */
+    display: flex;
+}
+footer .footer_escrow span {
+    /* 박스모델 레이아웃이므로 박스로 만들어야 함 */
+    display: inline-block;
+    margin-right: 46px;
+}
+footer .footer_info>p:last-child {
+    margin-top: 32px;
+}
+footer .footer_right {
+    color: #cccdd1;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+footer .footer_right dl:first-child dt+dd {
+    font-size: 2.2rem;
+}
+footer .footer_right dl:first-child dt+dd+dd {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #a8a9ad;
+    margin-bottom: 42px;
+}
+footer .footer_right dl:last-child dt+dd{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+footer .footer_right dl:last-child dt+dd+dd{
+    font-size: 1.3rem;
+    color: #a4a5aa;
+}

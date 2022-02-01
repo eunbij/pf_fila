@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ebjj">
+    <meta name="description" content="Portfolio, Flex 구조">
+    <title>Fila 리뉴얼 Flex 코딩</title>
+    <!-- Meta Data : FaceBook-->
+    <meta property="og:image" content="./images/favicon/fila_fav180.png">
+    <meta property="og:title" content="FILA 홈페이지 리뉴얼 코딩">
+    <meta property="og:description" content="플렉스 구조 코딩">
+    <meta property="og:url" content="http://eunbij.dothome.co.kr">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="FILA_RENEWAL_FLEX_CODING">
+    <meta property="og:type" content="플렉스 구조 코딩 프로젝트">
+    <!-- BootStrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Favicon PC / Mobile -->
+    <link rel="shortcut icon" href="./images/favicon/fila_fav32.png">
+    <link rel="apple-touch-icon-precomposed" href="./images/favicon/fila_fav180.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/notosans_kr_CDN.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <!-- System Font CSS(optional) -->
+    <!-- <link rel="stylesheet" href="./css/system_font.css"> -->
+    <!-- No Scrollbar CSS -->
+    <!-- <link rel="stylesheet" href="./css/no_scrollbar.css"> -->
+    
+    <!-- HTML5 JS File -->
+    <script src="./js/html5shiv.js"></script>
+    <script src="./js/respond.src.js"></script>
+    <!-- JQ PlugIn -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- PreFix Free -->
+    <script src="./js/prefixfree.min.js"></script>
+
+    <!-- 프로젝트 페이지 SCRIPT -->
+    <!-- 프로젝트 페이지 CSS -->
+    <link rel="stylesheet" href="./css/fila.css">
+</head>
+<body>
+    <div id="wrap">
+        <!-- Aside PopUp -->
+        <aside>
+            <div class="top_sub w1300">
+                <p>
+                    온라인 단독 WINTER SALE&hearts; UP TO 38&#37; OFF
+                </p>
+                <p>
+                    &nbsp;&nbsp;바로 확인하기&nbsp;&nbsp;
+                    <img src="./images/btn_next_f5.png" alt="혜택확인">
+                </p>
+                <p>
+                    <img src="./images/btn_close_f5.png" alt="X자버튼">
+                </p>
+            </div>
+        </aside>
+        <!-- /Aside PopUp -->
+        <!-- Header -->
+        <header>
+            <!-- Logo+LNB Menu -->
+            <div class="lnb_all">
+                <div class="root_lnb w1300">
+                    <!-- Logo -->
+                    <h1>
+                        <img src="./images/fila_logo.png" alt="로고">
+                    </h1>
+                    <!-- /Logo -->
+                    <!-- Lnb Menu : 해당 페이지에서만(GNB사이트 어디에서나) -->
+                    <nav class="local">
+                        <ul class="lnb">
+                            <li><a href="#"><img src="./images/search.png" alt="검색아이콘"></a></li>
+                            <li><a href="#"><img src="./images/cart.png" alt="장바구니아이콘"></a></li>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                        </ul>
+                    </nav>
+                    <!-- /Lnb Menu -->
+                </div>
+            </div>
+            <!-- /Logo+LNB Menu -->
+            <!-- GNB Menu -->
+            <div class="gnb_all">
+                <div class="w1300">
+                    <nav class="global">
+                        <h2>
+                            <a href="#"><img src="./images/hamburger.png" alt="햄버거메뉴"></a>
+                        </h2>
+                        <ul class="gnb">
+                            <li><a href="#">WOMEN</a></li>
+                            <li><a href="#">MEN</a></li>
+                            <li><a href="#">NEW</a></li>
+                            <li><a href="#">BEST</a></li>
+                            <li><a href="#">EXCLUSIVE</a></li>
+                        </ul>
+                        <ul class="snb">
+                            <li><a href="#">UNDERWEAR</a></li>
+                            <li><a href="#">KIDS</a></li>
+                            <li><a href="#">GOLF</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /GNB Menu -->
+        </header>
+        <!-- /Header -->
+        <!-- Slider -->
+        <article>
+            <h2 class="slider">
+                <img src="./images/mainimage01.jpg" alt="슬라이드이미지">
+            </h2>
+        </article>
+        <!-- /Slider -->
+        <!-- Contents -->
+        <main role="main">
+            <section class="md_pick w1300">
+                <h2>
+                    <img src="./images/animation.gif" alt="움짤영상">
+                </h2>
+                <h3>
+                    <img src="./images/mdpicktitle.png" alt="mdpick타이틀">
+                    <div class="md_pick_area">
+                        <ul>
+                            <li><a href="#"><img src="./images/mdpick01.jpg" alt="엠디픽제품01"></a></li>
+                            <li><a href="#"><img src="./images/mdpick02.jpg" alt="엠디픽제품02"></a></li>
+                            <li><a href="#"><img src="./images/mdpick03.jpg" alt="엠디픽제품03"></a></li>
+                        </ul>
+                    </div>
+                    <p>
+                        <a href="#"><img src="./images/btn_viewmore.png" alt="전체상품보기"></a>
+                    </p>
+                </h3>
+            </section>
+            <!-- /Section 01 -->
+            <!-- Section 02 -->
+            <section class="ma_fila">
+                <h2 class="mafila_detail w1300">
+                    <ul>
+                        <li><a href="#"><img src="./images/title_image.png" alt="타이틀이미지"></a></li>
+                        <li><a href="#">#세상에</a></li>
+                        <li><a href="#">#단 하나뿐인</a></li>
+                        <li><a href="#">#나만의 신발</a></li>
+                        <li><a href="#">#MAKE_YOUR_PRIDE</a></li>
+                        <li><a href="#"><img src="./images/btn_making.png" alt="전체영상보기"></a></li>
+                    </ul>
+                    <figure>
+                        <iframe
+                        width="800"
+                        height="450"
+                        src="https://www.youtube.com/embed/4EGAegRX658?list=TLGGAy6yOFUVXKgyNTAxMjAyMg"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="allowfullscreen">
+                        </iframe>
+                        <!-- <img src="http://placehold.it/800x450/002A1C" alt="제품동영상"> -->
+                    </figure>
+                </h2>
+            </section>
+            <!-- /Section 02 -->
+            <!-- Section 03 -->
+            <section class="filasns w1300">
+                <h2>
+                    <img src="./images/snstitle.png" alt="sns타이틀">
+                </h2>
+                <div class="fila_sns">
+                    <ul>
+                        <li><a href="#"><img src="./images/snsimg01.png" alt="SNS 제품01"></a></li>
+                        <li><a href="#"><img src="./images/snsimg02.png" alt="SNS 제품02"></a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" target="_blank"><img src="./images/snsimg03.png" alt="SNS 제품03"></a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><img src="./images/snsimg04.png" alt="SNS 제품04"></a></li>
+                        <li><a href="#"><img src="./images/snsimg05.png" alt="SNS 제품05"></a></li>
+                        <li><a href="#"><img src="./images/snsimg06.png" alt="SNS 제품06"></a></li>
+                        <li><a href="#"><img src="./images/snsimg07.png" alt="SNS 제품07"></a></li>
+                        <li><a href="#"><img src="./images/snsimg08.png" alt="SNS 제품08"></a></li>
+                        <li><a href="#"><img src="./images/snsimg09.png" alt="SNS 제품09"></a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="https://www.instagram.com/fila_korea/" target="_blank"><img src="./images/btn_viewmore.png" alt="전체리뷰보기"></a>
+                </p>
+            </section>
+            <!-- /Section 03 -->
+        </main>
+        <!-- /Contents -->
+        <!-- Footer -->
+        <footer>
+            <div class="footer_total w1300">
+                <div class="footer_left">
+                    <nav>
+                        <ul class="footer_gnb">
+                            <li><a href="#">About&nbsp;FILA&nbsp;&nbsp;|&nbsp;&nbsp;</a></li>
+                            <li><a href="#">Ethics&nbsp;&nbsp;|&nbsp;&nbsp;</a></li>
+                            <li><a href="#">Contact&nbsp;US&nbsp;&nbsp;|&nbsp;&nbsp;</a></li>
+                            <li><a href="#">Athletes&nbsp;&nbsp;|&nbsp;&nbsp;</a></li>
+                            <li><a href="#">Terms&nbsp;&nbsp;|&nbsp;&nbsp;</a></li>
+                            <li><a href="#">Connect&nbsp;With&nbsp;Us&nbsp;&nbsp;|</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer_info">
+                        <p>
+                            휠라코리아(주) | 대표이사 윤근창 | <br>
+                            사업등록번호 : 716-81-01573 | 통신판매업신고번호 : 제 2020-서울강동-0160호 <br>
+                            주소 : 서울특별시 강동구 천호대로 1077 이스트센트럴타워 16층 | 대표번호 : 1577-3472 | FILAONLINE@FILA.COM
+                        </p>
+                        <p class="footer_escrow">
+                            <span>
+                                고객님의 안전거래를 위해 현금 결제시, <br>
+                                구매안전 서비스를 이용하실 수 있습니다 [가입사실확인]
+                            </span>
+                            <img src="./images/safemark.png" alt="안전거래확인이미지">
+                        </p>
+                        <p>
+                            Copyright &copy; 2022 EBWEB., Ltd. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+                <div class="footer_right">
+                    <dl>
+                        <dt>고객센터</dt>
+                        <dd>1577-6429</dd>
+                        <dd>평일 09:00 ~ 18:00 | 토, 일요일 및 공휴일 휴무</dd>
+                    </dl>
+                    <dl>
+                        <dt>교환 및 반품 주소</dt>
+                        <dd>경기도 부천시 송내대로 30번길 13</dd>
+                        <dd>온라인 또는 고객센터를 통해 반품신청 및 접수</dd>
+                    </dl>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+    </div>
+</body>
+</html>
