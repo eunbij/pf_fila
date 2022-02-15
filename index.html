@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ebjj">
     <meta name="description" content="Portfolio, Flex 구조">
-    <title>Fila 리뉴얼 Flex 코딩</title>
+    <title>Flex 구조 코딩 : FILA</title>
     <!-- Meta Data : FaceBook-->
     <meta property="og:image" content="./images/favicon/fila_fav180.png">
     <meta property="og:title" content="FILA 홈페이지 리뉴얼 코딩">
@@ -29,7 +29,10 @@
     <!-- <link rel="stylesheet" href="./css/system_font.css"> -->
     <!-- No Scrollbar CSS -->
     <!-- <link rel="stylesheet" href="./css/no_scrollbar.css"> -->
-    
+    <!-- JQ PlugIn - Box Slider CSS -->
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+    <!-- 프로젝트 페이지 CSS -->
+    <link rel="stylesheet" href="./css/fila.css">
     <!-- HTML5 JS File -->
     <script src="./js/html5shiv.js"></script>
     <script src="./js/respond.src.js"></script>
@@ -39,10 +42,11 @@
     <script src="./js/jquery-3.4.1.min.js"></script>
     <!-- PreFix Free -->
     <script src="./js/prefixfree.min.js"></script>
-
+    <!-- JQ PlugIn - Box Slider JS -->
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <script src="./js/jquery.bxslider.js"></script>
     <!-- 프로젝트 페이지 SCRIPT -->
-    <!-- 프로젝트 페이지 CSS -->
-    <link rel="stylesheet" href="./css/fila.css">
+    <script src="./js/fila.js"></script>    
 </head>
 <body>
     <div id="wrap">
@@ -69,10 +73,10 @@
                 <div class="root_lnb w1300">
                     <!-- Logo -->
                     <h1>
-                        <img src="./images/fila_logo.png" alt="로고">
+                        <a href="index.html"><img src="./images/fila_logo.png" alt="로고"></a>
                     </h1>
                     <!-- /Logo -->
-                    <!-- Lnb Menu : 해당 페이지에서만(GNB사이트 어디에서나) -->
+                    <!-- Lnb Menu -->
                     <nav class="local">
                         <ul class="lnb">
                             <li><a href="#"><img src="./images/search.png" alt="검색아이콘"></a></li>
@@ -93,11 +97,43 @@
                             <a href="#"><img src="./images/hamburger.png" alt="햄버거메뉴"></a>
                         </h2>
                         <ul class="gnb">
-                            <li><a href="#">WOMEN</a></li>
-                            <li><a href="#">MEN</a></li>
-                            <li><a href="#">NEW</a></li>
+                            <li>
+                                <a href="#">WOMEN</a>
+                                <div class="submenu">
+                                    <p><a href="#">의류</a></p>
+                                    <p><a href="#">신발</a></p>
+                                    <p><a href="#">용품</a></p>
+                                    <p><a href="#">온라인 단독</a></p>
+                                    <p><a href="#">SALE</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">MEN</a>
+                                <div class="submenu">
+                                    <p><a href="#">의류</a></p>
+                                    <p><a href="#">신발</a></p>
+                                    <p><a href="#">용품</a></p>
+                                    <p><a href="#">온라인 단독</a></p>
+                                    <p><a href="#">SALE</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">NEW</a>
+                                <div class="submenu">
+                                    <p><a href="#">SWEET VDAY</a></p>
+                                    <p><a href="#">Uni 클래식킥스</a></p>
+                                    <p><a href="#">신학기 SS 백팩</a></p>
+                                    <p><a href="#">RAYFLIDE</a></p>
+                                    <p><a href="#">Uni COURT DELUXE</a></p>
+                                </div>
+                            </li>
                             <li><a href="#">BEST</a></li>
-                            <li><a href="#">EXCLUSIVE</a></li>
+                            <li>
+                                <a href="#">EXCLUSIVE</a>
+                                <div class="submenu">
+                                    <p><a href="#">22 SS COLLECTION</a></p>
+                                </div>
+                            </li>
                         </ul>
                         <ul class="snb">
                             <li><a href="#">UNDERWEAR</a></li>
@@ -112,9 +148,18 @@
         <!-- /Header -->
         <!-- Slider -->
         <article>
-            <h2 class="slider">
-                <img src="./images/mainimage01.jpg" alt="슬라이드이미지">
-            </h2>
+            <div class="banner">
+                <div id="gallery_wrap">
+                    <h2>
+                        <ul class="slider">
+                            <li><img src="./images/mainimage01.jpg" class="sliderimg01" alt="슬라이드이미지01"></li>
+                            <li><img src="./images/mainimage02.jpg" class="sliderimg02" alt="슬라이드이미지02"></li>
+                        </ul>
+                    </h2>
+                    <!-- <a href="#" class="more_btn_01">자세히보기</a> -->
+                    <!-- <a href="#" class="more_btn_02">자세히보기</a> -->
+                </div>
+            </div>
         </article>
         <!-- /Slider -->
         <!-- Contents -->
@@ -124,12 +169,36 @@
                     <img src="./images/animation.gif" alt="움짤영상">
                 </h2>
                 <h3>
-                    <img src="./images/mdpicktitle.png" alt="mdpick타이틀">
+                    <img class="mdpicktitle" src="./images/mdpicktitle.png" alt="mdpick타이틀">
                     <div class="md_pick_area">
                         <ul>
-                            <li><a href="#"><img src="./images/mdpick01.jpg" alt="엠디픽제품01"></a></li>
-                            <li><a href="#"><img src="./images/mdpick02.jpg" alt="엠디픽제품02"></a></li>
-                            <li><a href="#"><img src="./images/mdpick03.jpg" alt="엠디픽제품03"></a></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <h3>FILA 코듀로이 서킷</h3>
+                                        <p>149,000원</p>
+                                    </div>
+                                    <img src="./images/mdpick01.jpg" alt="엠디픽제품01">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <h3>22SS LINK DUO</h3>
+                                        <p>119,000원</p>
+                                    </div>
+                                    <img src="./images/mdpick02.jpg" alt="엠디픽제품02">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <h3>2022 레이플라이드</h3>
+                                        <p>79,000원</p>
+                                    </div>
+                                    <img src="./images/mdpick03.jpg" alt="엠디픽제품03">
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <p>
@@ -143,22 +212,57 @@
                 <h2 class="mafila_detail w1300">
                     <ul>
                         <li><a href="#"><img src="./images/title_image.png" alt="타이틀이미지"></a></li>
-                        <li><a href="#">#세상에</a></li>
-                        <li><a href="#">#단 하나뿐인</a></li>
-                        <li><a href="#">#나만의 신발</a></li>
-                        <li><a href="#">#MAKE_YOUR_PRIDE</a></li>
+                        <li class="active" id="linked" onclick="addarea(0)"><a href="javascript:void(0);">#세상에</a></li>
+                        <li id="linked"><a href="javascript:void(0);" onclick="addarea(1)">#단 하나뿐인</a></li>
+                        <li id="linked" ><a href="javascript:void(0);" onclick="addarea(2)">#나만의 신발</a></li>
+                        <li id="linked" ><a href="javascript:void(0);" onclick="addarea(3)">#MAKE_YOUR_PRIDE</a></li>
                         <li><a href="#"><img src="./images/btn_making.png" alt="전체영상보기"></a></li>
                     </ul>
                     <figure>
-                        <iframe
-                        width="800"
-                        height="450"
-                        src="https://www.youtube.com/embed/4EGAegRX658?list=TLGGAy6yOFUVXKgyNTAxMjAyMg"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen="allowfullscreen">
-                        </iframe>
+                        <div class="addarea0">
+                            <iframe
+                            width="800"
+                            height="450"
+                            src="https://www.youtube.com/embed/6GOGFwXwv7U"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="allowfullscreen">
+                            </iframe>
+                        </div>
+                        <div class="addarea1">
+                            <iframe
+                            width="800"
+                            height="450"
+                            src="https://www.youtube.com/embed/pMaScpCRnbg"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="allowfullscreen">
+                            </iframe>
+                        </div>
+                        <div class="addarea2">
+                            <iframe
+                            width="800"
+                            height="450"
+                            src="https://www.youtube.com/embed/olCdA82nxRk"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="allowfullscreen">
+                            </iframe>
+                        </div>
+                        <div class="addarea3">
+                            <iframe
+                            width="800"
+                            height="450"
+                            src="https://www.youtube.com/embed/4EGAegRX658"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="allowfullscreen">
+                            </iframe>
+                        </div>
                         <!-- <img src="http://placehold.it/800x450/002A1C" alt="제품동영상"> -->
                     </figure>
                 </h2>
@@ -171,22 +275,85 @@
                 </h2>
                 <div class="fila_sns">
                     <ul>
-                        <li><a href="#"><img src="./images/snsimg01.png" alt="SNS 제품01"></a></li>
-                        <li><a href="#"><img src="./images/snsimg02.png" alt="SNS 제품02"></a></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>에센셜 구스 숏다운</h3>
+                                </div>
+                            <img src="./images/snsimg01.png" alt="SNS 제품01">
+                        </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>헤리티지 세리프 로고 <br> 루즈핏 반팔티</h3>
+                                </div>
+                            <img src="./images/snsimg02.png" alt="SNS 제품02">
+                        </a>
+                        </li>
                     </ul>
                     <ul>
-                        <li><a href="#" target="_blank"><img src="./images/snsimg03.png" alt="SNS 제품03"></a></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>MZ BACKPACK</h3>
+                                </div>
+                                <img src="./images/snsimg03.png" alt="SNS 제품03">
+                            </a>
+                        </li>
                     </ul>
                     <ul>
-                        <li><a href="#"><img src="./images/snsimg04.png" alt="SNS 제품04"></a></li>
-                        <li><a href="#"><img src="./images/snsimg05.png" alt="SNS 제품05"></a></li>
-                        <li><a href="#"><img src="./images/snsimg06.png" alt="SNS 제품06"></a></li>
-                        <li><a href="#"><img src="./images/snsimg07.png" alt="SNS 제품07"></a></li>
-                        <li><a href="#"><img src="./images/snsimg08.png" alt="SNS 제품08"></a></li>
-                        <li><a href="#"><img src="./images/snsimg09.png" alt="SNS 제품09"></a></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>샌드 블라스트 로우</h3>
+                                </div>
+                                <img src="./images/snsimg04.png" alt="SNS 제품04">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>팝콘 보아 플리스</h3>
+                                </div>
+                                <img src="./images/snsimg05.png" alt="SNS 제품05">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>LIFE GOES ON 반팔티</h3>
+                                </div>
+                                <img src="./images/snsimg06.png" alt="SNS 제품06">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>휠라 포켓 경량 베스트</h3>
+                                </div>
+                                <img src="./images/snsimg07.png" alt="SNS 제품07">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>펑키테니스 1998</h3>
+                                </div>
+                                <img src="./images/snsimg08.png" alt="SNS 제품08">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <h3>오버핏 코쿤 웰론 숏패딩</h3>
+                                </div>
+                            <img src="./images/snsimg09.png" alt="SNS 제품09">
+                        </a>
+                        </li>
                     </ul>
                 </div>
-                <p>
+                <p class="more">
                     <a href="https://www.instagram.com/fila_korea/" target="_blank"><img src="./images/btn_viewmore.png" alt="전체리뷰보기"></a>
                 </p>
             </section>
@@ -216,7 +383,7 @@
                         <p class="footer_escrow">
                             <span>
                                 고객님의 안전거래를 위해 현금 결제시, <br>
-                                구매안전 서비스를 이용하실 수 있습니다 [가입사실확인]
+                                구매안전 서비스를 이용하실 수 있습니다. &nbsp; [가입사실확인]
                             </span>
                             <img src="./images/safemark.png" alt="안전거래확인이미지">
                         </p>
@@ -240,6 +407,22 @@
             </div>
         </footer>
         <!-- /Footer -->
+    <script>
+        let video = $('.ma_fila .mafila_detail').find('li#linked');
+        console.log(video.length);
+        let i = 0;
+        function addarea(num){
+            for(i=0;i<video.length;i++){
+                if(num==i){
+                    video.eq(i).addClass('active');
+                    $('.addarea'+i).show();
+                }else{
+                    video.eq(i).removeClass('active');
+                    $('.addarea'+i).hide();
+                }
+            }
+        }
+    </script>
     </div>
 </body>
 </html>

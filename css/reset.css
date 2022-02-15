@@ -132,17 +132,26 @@ button {background: none;}
 .no_pb {padding-bottom: 0 !important;}
 .no_pl {padding-left: 0 !important;}
 
-
 /* border값 초기화 */
 .no_bt {border-top: 0 !important;}
 .no_br {border-right: 0 !important;}
 .no_bb {border-bottom: 0 !important;}
 .no_bl {border-left: 0 !important;}
 
-
 /* 플롯 해제 */
 .cf:after {
     content: "";
     display: block;
     clear: both;
+}
+
+/* 모든 환경에 안 보여도 되지만, 반드시 입력해야할 HTML 태그가 존재(웹접근성) */
+/* 그 때, 해당 요소를 숨기기 위해 사용하는 Class */
+.blind {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
 }

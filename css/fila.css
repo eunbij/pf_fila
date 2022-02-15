@@ -12,6 +12,7 @@ body { font-family: "Noto Sans KR", sans-serif;}
 aside {
     height: 56px;
     background-color: #607bbc;
+    background-color: #000;
     color: #f5f5f5;
     font-weight: 700;
 }
@@ -72,6 +73,7 @@ header .local .lnb{
 }
 header .local .lnb li {
     margin-left: 12px;
+    line-height: 20px;
 }
 header .local .lnb li:nth-child(1){
     margin-left: 0;
@@ -94,16 +96,20 @@ header .global .gnb {
     /* 플렉스 */
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
 }
 header .global .gnb li {
-    margin-right: 52px;
+    /* margin-right: 52px; */
+    text-align: center;
+    width: 160px;
+    /* 위치기준값 */
+    position: relative;
 }
 header .global .gnb li:last-child{
-    margin-right: 0;
+    /* margin-right: 0; */
 }
 header .global .gnb li a{
     color: #253358 ;
-    font-weight: 600;
 }
 header .global .snb{
     /* 플렉스 */
@@ -121,8 +127,15 @@ header .global .snb li a{
     color: #020202;
     font-weight: 500;
 }
-/* 20220126 영문 폰트 추가 및 fw 수정 */
-header .global .gnb li a {
+header .global .snb li a:hover {
+    color: #07d4d3;
+}
+
+
+
+
+/* 20220126 영문 폰트 추가 및 font-weight 수정 */
+header .global .gnb>li>a {
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
 }
@@ -130,17 +143,89 @@ header .global .snb li a {
     font-family: 'Nunito', sans-serif;
     /* font-weight: 600; */
 }
+/* 220203 추가 gnb hover */
+header .global .gnb>li>a:hover{
+    color: #07d4d3;
+}
+
+/* 220210 추가 */
+.gnb .submenu {
+    width: 100%;
+    /* 포지션 */
+    position: absolute;
+    z-index: 100;
+    display: none;  
+    text-align: center;  
+}
+.gnb .submenu p {
+    background-color: rgba(7, 212, 211,.5);
+    /* background-color: rgba(96, 123, 188, .5); */
+    transition: all 1s;
+}
+.gnb .submenu>p>a {
+    font-weight: 400;
+
+}
+.gnb .submenu p:hover {
+    background-color: #07d4d3;
+    color: #253358;
+}
+header .global .gnb .submenu a:hover{
+    color: #253358;
+}
+
 
 /* Slider */
-.slider img {
+.slider>img {
     max-width: 100%;
-    
 }
+
+/* 220203 버튼 추가  */
+.slider {
+    /* 위치기준값 */
+    position: relative;
+
+}
+article .more_btn_01{
+    width: 220px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 1.4rem;
+    /* 포지션 */
+    position: absolute;
+    left: 360px;
+    bottom: 80px;
+    z-index: 22;
+}
+article .more_btn_02{
+    width: 220px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 1.4rem;
+    /* 포지션 */
+    position: absolute;
+    left: calc(50% - 110px);
+    bottom: 160px;
+    z-index: 22;
+}
+/* article .more_btn::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    background: #f5f5f5;
+    transition: all .3s ease-in-out;
+} */
 
 /* Contents */
 /* Section 01 */
 
-/* Contents CSS 실습확인 */
+/* Contents CSS */
 main {}
 .md_pick {
     /* 플렉스 */
@@ -150,6 +235,10 @@ main {}
 .md_pick h3 {
     text-align: center;
     padding-top: 36px;
+}
+/* 220201 추가작업 타이틀 위치 이동*/
+.md_pick .mdpicktitle {
+    transform: translateX(-60px);
 }
 .md_pick .md_pick_area {
     margin-top: 32px;
@@ -175,9 +264,58 @@ main {}
     padding-right: 60px;
 }
 
-/* Section 02 실습확인 */
+/* 220210 추가 작업 */
+.md_pick .md_pick_area li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* 포지션 위치기준값 */
+    position: relative;
+}
+.md_pick .md_pick_area li a:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #607bbc;
+    opacity: 0;
+    /* 포지션 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+.md_pick .md_pick_area li a:hover:before {
+    opacity: 0.7;
+}
+.md_pick .md_pick_area li div h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.md_pick .md_pick_area li div p {
+    color: #fff;
+    font-size: 1.6rem;
+}
+.md_pick .md_pick_area li div {
+    /* 포지션 */
+    position: absolute;
+    left: 40px;
+    top: 0;
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.md_pick .md_pick_area li a:hover div{
+    opacity: 1;
+    transform: translateY(100px);
+}
+
+
+/* Section 02 */
 .ma_fila {
-    background-color: #f3f0eb;
+    background-color: rgba(174, 193, 244,.5);
     margin-top: 150px;
 }
 .ma_fila .mafila_detail {
@@ -207,7 +345,6 @@ main {}
 .ma_fila .mafila_detail ul li a {
     font-size: 1.7rem;
     color: #393939;
-    /* 호버 주기 위해 인라인블럭 */
     display: inline-block;
     width: 234px;
     height: 32px;
@@ -242,7 +379,7 @@ main {}
     display: flex;
 }
 .filasns .fila_sns ul:first-child {
-    /* 플렉스 : column 아니어도 할 수는 있으나 연습으로 사용 */
+    /* 플렉스 */
     display: flex;
     flex-flow: column wrap;
 }
@@ -270,16 +407,72 @@ main {}
 .filasns .fila_sns ul:last-child li:nth-child(6) {
     margin-bottom: 0;
 }
-.filasns p {
+.filasns .more {
     text-align: right;
     padding-right: 80px;
     margin-top: 28px;
 }
 
-/* Footer CSS 실습 확인 */
+/* 220210 추가 작업 */
+.filasns .fila_sns li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* 포지션 위치기준값 */
+    position: relative;
+}
+.filasns .fila_sns li a:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* border: none; */
+    border-radius: 34px;
+    background: #607bbc;
+    opacity: 0;
+    /* 포지션 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+.filasns .fila_sns li a:hover:before {
+    opacity: 0.7;
+}
+.filasns .fila_sns li div h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.filasns .fila_sns li div {
+    /* 포지션 */
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.filasns .fila_sns li a:hover div{
+    opacity: 1;
+}
+.filasns .fila_sns ul:nth-child(2) div {
+    left: 130px;
+}
+.filasns .fila_sns ul:nth-child(2) a:before{
+    border-radius: 0 86px 0 86px;
+}
+
+
+
+
+
+/* Footer */
 footer {
     margin-top: 100px;
-    background-color: #1d1c2e;
+    background-color: #253358;
     padding-top: 24px;
     padding-bottom: 54px;
     line-height: 1.5;
@@ -295,7 +488,7 @@ footer .footer_left, footer .footer_right {
     margin-top: 40px;
 }
 footer .footer_gnb {
-    color: #eeeef0;
+    color: #f5f5f5;
     font-size: 1.4rem;
     margin-bottom: 20px;
     /* 플렉스 */
@@ -303,7 +496,7 @@ footer .footer_gnb {
 }
 footer .footer_info {
     font-size: 1.2rem;
-    color: #9a9c9b;
+    color: #535B73;
     font-weight: 400;
 }
 footer .footer_escrow {
@@ -312,7 +505,6 @@ footer .footer_escrow {
     display: flex;
 }
 footer .footer_escrow span {
-    /* 박스모델 레이아웃이므로 박스로 만들어야 함 */
     display: inline-block;
     margin-right: 46px;
 }
@@ -320,7 +512,7 @@ footer .footer_info>p:last-child {
     margin-top: 32px;
 }
 footer .footer_right {
-    color: #cccdd1;
+    color: #f5f5f5;
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.6;
@@ -331,7 +523,7 @@ footer .footer_right dl:first-child dt+dd {
 footer .footer_right dl:first-child dt+dd+dd {
     font-size: 1.2rem;
     font-weight: 300;
-    color: #a8a9ad;
+    color: #535B73;
     margin-bottom: 42px;
 }
 footer .footer_right dl:last-child dt+dd{
@@ -340,5 +532,17 @@ footer .footer_right dl:last-child dt+dd{
 }
 footer .footer_right dl:last-child dt+dd+dd{
     font-size: 1.3rem;
-    color: #a4a5aa;
+    color: #535B73;
+}
+/* 220203 bx_slider */
+#gallery_wrap {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+/* 220211 추가 동영상 */
+.ma_fila .mafila_detail figure div:nth-child(2),
+.ma_fila .mafila_detail figure div:nth-child(3),
+.ma_fila .mafila_detail figure div:nth-child(4) {
+    display: none;
 }
