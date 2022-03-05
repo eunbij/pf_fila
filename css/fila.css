@@ -36,6 +36,7 @@ aside .top_sub>p:nth-child(2){
     margin-left: -365px;
     line-height: 56px;
     /* background-color: green; */
+    cursor: pointer;
 }
 aside .top_sub>p:nth-child(2) img {
     vertical-align: middle;
@@ -44,6 +45,7 @@ aside .top_sub>p:nth-child(2) img {
 aside .top_sub>p:nth-child(3){
     /* background-color: blue; */
     margin-top: 18px;
+    cursor: pointer;
 }
 aside .top_sub>p:nth-child(3) img {
     vertical-align: middle;
@@ -82,7 +84,61 @@ header .local .lnb li:nth-child(1){
 /* GNB Menu */
 header .gnb_all {
     border-bottom: 1px solid #c9c9c9;
+
 }
+
+/* Hamburger Menu 0224*/
+.ham {
+    padding: 22px 0;
+}
+.gnb_all .global input[id="menuicon"]{
+    display: none;
+}
+/* A. 그리기 */
+.gnb_all .global input[id="menuicon"]+label{
+    display: block;
+    width: 24px;
+    height: 14px;
+    cursor: pointer;
+    /* 포지션 위치기준값 */
+    position: relative;
+}
+.gnb_all .global input[id="menuicon"]+label span{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #253358;
+    /* 포지션 */
+    position: absolute;
+    z-index: 100;
+    transition: all 0.3s;
+
+}
+.gnb_all .global input[id="menuicon"]+label span:nth-child(1){
+    top: 0;
+}
+.gnb_all .global input[id="menuicon"]+label span:nth-child(2){
+    top: 50%;
+    transform: translateY(-50%);
+}
+.gnb_all .global input[id="menuicon"]+label span:nth-child(3){
+    bottom: 0;
+}
+/* B. X */
+.gnb_all .global input[id="menuicon"]:checked +label span:nth-child(1){
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.gnb_all .global input[id="menuicon"]:checked +label span:nth-child(2){
+    opacity: 0;
+}
+.gnb_all .global input[id="menuicon"]:checked +label span:nth-child(3){
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+
+
 header .global {
     /* 플렉스 */
     display: flex;
@@ -131,9 +187,6 @@ header .global .snb li a:hover {
     color: #07d4d3;
 }
 
-
-
-
 /* 20220126 영문 폰트 추가 및 font-weight 수정 */
 header .global .gnb>li>a {
     font-family: 'Nunito', sans-serif;
@@ -157,16 +210,15 @@ header .global .gnb>li>a:hover{
     display: none;  
     text-align: center;  
 }
-.gnb .submenu p {
-    background-color: rgba(7, 212, 211,.5);
-    /* background-color: rgba(96, 123, 188, .5); */
+.gnb .submenu li {
+    background-color: #f5f5f5;
     transition: all 1s;
 }
-.gnb .submenu>p>a {
+.gnb .submenu>li>a {
     font-weight: 400;
 
 }
-.gnb .submenu p:hover {
+.gnb .submenu li:hover {
     background-color: #07d4d3;
     color: #253358;
 }
@@ -174,6 +226,43 @@ header .global .gnb .submenu a:hover{
     color: #253358;
 }
 
+
+/* 추가작업 : 햄버거 버튼 GNB 전체 토글 */
+.gnb_all .global{
+    position: relative;
+}
+.hamgnb {
+    width: 1108px;
+    height: 280px;
+    background-color: rgba(245, 245, 245,.7);
+    z-index: 100;
+    margin-top: -4px;
+}
+#hamgnb {
+    width: 800px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    /* 포지션 */
+    position: absolute;
+    left: 166px;
+    top: 54px;
+    z-index: 100;
+}
+.hamgnb .submenu_ham {
+    text-align: center;
+}
+.hamgnb .submenu_ham li {
+    width: 160px;
+    transition: all 1s;
+}
+.hamgnb .submenu_ham li:hover {
+    background-color: #07d4d3;
+    color: #253358;
+}
+.hamgnb {
+    display: none;
+}
 
 /* Slider */
 .slider>img {
@@ -212,21 +301,12 @@ article .more_btn_02{
     bottom: 160px;
     z-index: 22;
 }
-/* article .more_btn::after{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%);
-    background: #f5f5f5;
-    transition: all .3s ease-in-out;
-} */
 
 /* Contents */
 /* Section 01 */
 
 /* Contents CSS */
-main {}
+
 .md_pick {
     /* 플렉스 */
     display: flex;
@@ -420,6 +500,7 @@ main {}
     height: 100%;
     /* 포지션 위치기준값 */
     position: relative;
+    overflow: hidden;
 }
 .filasns .fila_sns li a:before {
     content: "";
@@ -434,39 +515,39 @@ main {}
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 1;
     transition: all 0.3s;
 }
 .filasns .fila_sns li a:hover:before {
     opacity: 0.7;
 }
-.filasns .fila_sns li div h3 {
-    font-size: 1.4rem;
-    color: #fff;
-    margin-bottom: 8px;
-}
 
 .filasns .fila_sns li div {
     /* 포지션 */
     position: absolute;
+    left: 16px;
     left: 30px;
-    bottom: 30px;
-    z-index: 200;
+    /* bottom: 10px; */
+    top: 10px;
+    z-index: 2;
     opacity: 0;
     transition: all 0.3s;
+}
+.filasns .fila_sns li div h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    /* margin-bottom: 8px; */
 }
 .filasns .fila_sns li a:hover div{
     opacity: 1;
 }
-.filasns .fila_sns ul:nth-child(2) div {
-    left: 130px;
+.filasns .fila_sns ul:nth-child(2) div h3 {
+    left: 10px;
+    font-size: 2.2rem;
 }
 .filasns .fila_sns ul:nth-child(2) a:before{
     border-radius: 0 86px 0 86px;
 }
-
-
-
 
 
 /* Footer */
@@ -496,7 +577,7 @@ footer .footer_gnb {
 }
 footer .footer_info {
     font-size: 1.2rem;
-    color: #535B73;
+    color: #DCEBF5;
     font-weight: 400;
 }
 footer .footer_escrow {
@@ -508,9 +589,13 @@ footer .footer_escrow span {
     display: inline-block;
     margin-right: 46px;
 }
-footer .footer_info>p:last-child {
+footer .footer_info>p:nth-child(3) {
     margin-top: 32px;
 }
+footer .footer_info>p:last-child {
+    font-size: 1rem;
+    /* color: #ccc; */
+} 
 footer .footer_right {
     color: #f5f5f5;
     font-size: 1.3rem;
@@ -523,7 +608,7 @@ footer .footer_right dl:first-child dt+dd {
 footer .footer_right dl:first-child dt+dd+dd {
     font-size: 1.2rem;
     font-weight: 300;
-    color: #535B73;
+    color: #DCEBF5;
     margin-bottom: 42px;
 }
 footer .footer_right dl:last-child dt+dd{
@@ -532,7 +617,7 @@ footer .footer_right dl:last-child dt+dd{
 }
 footer .footer_right dl:last-child dt+dd+dd{
     font-size: 1.3rem;
-    color: #535B73;
+    color: #DCEBF5;
 }
 /* 220203 bx_slider */
 #gallery_wrap {
@@ -546,3 +631,30 @@ footer .footer_right dl:last-child dt+dd+dd{
 .ma_fila .mafila_detail figure div:nth-child(4) {
     display: none;
 }
+
+/* 220222 Modal */
+#pop {
+    width: 300px;
+    height: 200px;
+    text-align: center;
+}
+#pop i {
+    font-size: 40px;
+    color: red;
+    margin: 40px 0 20px 0;
+}
+#pop p {
+    font-size: 16px;
+}
+
+/* 20220222 sns */
+/* .fila_sns ul li a img {
+    transition: all 0.2s linear;
+}*/
+/* .fila_sns ul li a:hover img {
+    transform: scale(1.1);
+}  */
+/* .fila_sns ul li a {
+    overflow: hidden;
+} */
+

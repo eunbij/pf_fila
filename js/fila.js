@@ -13,12 +13,17 @@ $(function(){
         $('aside').stop().slideUp();
     });
 
+    $('.ham #menuicon').on('click',function(){
+        $('.hamgnb').slideToggle();
+    });
+
     $('.gnb li').mouseenter(function(){
-        $(this).children('div').stop().slideDown();
+        $(this).children('ul').stop().slideDown();
     });
     $('.gnb li').mouseleave(function(){
-        $(this).find('div:visible').stop().slideUp();
+        $(this).find('ul:visible').stop().slideUp();
     });
+
 
     var addBtn01 = $('<a href="#" class="more_btn_01">자세히보기</a>');
     // $(addBtn01).insertAfter($('.slider .sliderimg01'));
@@ -28,5 +33,7 @@ $(function(){
     $('.slider .sliderimg02').after(addBtn02);
 
 
-
+    $('.local .lnb li a, .global h2 a, .gnb a, .md_pick_area a, .fila_sns a, .footer_gnb a').click(function(e){
+        e.preventDefault();
+    });
 });

@@ -45,6 +45,9 @@
     <!-- JQ PlugIn - Box Slider JS -->
     <script src="./js/jquery.bxslider.min.js"></script>
     <script src="./js/jquery.bxslider.js"></script>
+    <!-- jQuery Modal Plugin CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <!-- 프로젝트 페이지 SCRIPT -->
     <script src="./js/fila.js"></script>    
 </head>
@@ -93,46 +96,52 @@
             <div class="gnb_all">
                 <div class="w1300">
                     <nav class="global">
-                        <h2>
-                            <a href="#"><img src="./images/hamburger.png" alt="햄버거메뉴"></a>
-                        </h2>
+                        <!-- Hamburger Menu -->
+                        <div class="ham">
+                            <input type="checkbox" id="menuicon">
+                            <label for="menuicon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </label>
+                        </div>
                         <ul class="gnb">
                             <li>
                                 <a href="#">WOMEN</a>
-                                <div class="submenu">
-                                    <p><a href="#">의류</a></p>
-                                    <p><a href="#">신발</a></p>
-                                    <p><a href="#">용품</a></p>
-                                    <p><a href="#">온라인 단독</a></p>
-                                    <p><a href="#">SALE</a></p>
-                                </div>
+                                <ul class="submenu">
+                                    <li><a href="#">의류</a></li>
+                                    <li><a href="#">신발</a></li>
+                                    <li><a href="#">용품</a></li>
+                                    <li><a href="#">온라인 단독</a></li>
+                                    <li><a href="#">SALE</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="#">MEN</a>
-                                <div class="submenu">
-                                    <p><a href="#">의류</a></p>
-                                    <p><a href="#">신발</a></p>
-                                    <p><a href="#">용품</a></p>
-                                    <p><a href="#">온라인 단독</a></p>
-                                    <p><a href="#">SALE</a></p>
-                                </div>
+                                <ul class="submenu">
+                                    <li><a href="#">의류</a></li>
+                                    <li><a href="#">신발</a></li>
+                                    <li><a href="#">용품</a></li>
+                                    <li><a href="#">온라인 단독</a></li>
+                                    <li><a href="#">SALE</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="#">NEW</a>
-                                <div class="submenu">
-                                    <p><a href="#">SWEET VDAY</a></p>
-                                    <p><a href="#">Uni 클래식킥스</a></p>
-                                    <p><a href="#">신학기 SS 백팩</a></p>
-                                    <p><a href="#">RAYFLIDE</a></p>
-                                    <p><a href="#">Uni COURT DELUXE</a></p>
-                                </div>
+                                <ul class="submenu">
+                                    <li><a href="#">SWEET VDAY</a></li>
+                                    <li><a href="#">Uni 클래식킥스</a></li>
+                                    <li><a href="#">신학기 SS 백팩</a></li>
+                                    <li><a href="#">RAYFLIDE</a></li>
+                                    <li><a href="#">Uni COURT DELUXE</a></li>
+                                </ul>
                             </li>
                             <li><a href="#">BEST</a></li>
                             <li>
                                 <a href="#">EXCLUSIVE</a>
-                                <div class="submenu">
-                                    <p><a href="#">22 SS COLLECTION</a></p>
-                                </div>
+                                <ul class="submenu">
+                                    <li><a href="#">22 SS COLLECTION</a></li>
+                                </ul>
                             </li>
                         </ul>
                         <ul class="snb">
@@ -140,6 +149,37 @@
                             <li><a href="#">KIDS</a></li>
                             <li><a href="#">GOLF</a></li>
                         </ul>
+                        <div class="hamgnb">
+                            <div id="hamgnb">
+                                <ul class="submenu_ham">
+                                    <li><a href="#">의류</a></li>
+                                    <li><a href="#">신발</a></li>
+                                    <li><a href="#">용품</a></li>
+                                    <li><a href="#">온라인 단독</a></li>
+                                    <li><a href="#">SALE</a></li>
+                                </ul>
+                                <ul class="submenu_ham">
+                                    <li><a href="#">의류</a></li>
+                                    <li><a href="#">신발</a></li>
+                                    <li><a href="#">용품</a></li>
+                                    <li><a href="#">온라인 단독</a></li>
+                                    <li><a href="#">SALE</a></li>
+                                </ul>
+                                <ul class="submenu_ham">
+                                    <li><a href="#">SWEET VDAY</a></li>
+                                    <li><a href="#">Uni 클래식킥스</a></li>
+                                    <li><a href="#">신학기 SS 백팩</a></li>
+                                    <li><a href="#">RAYFLIDE</a></li>
+                                    <li><a href="#">Uni COURT DELUXE</a></li>
+                                </ul>
+                                <ul class="submenu_ham">
+                                    <li></li>
+                                </ul>
+                                <ul class="submenu_ham">
+                                    <li><a href="#">22 SS COLLECTION</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -202,7 +242,7 @@
                         </ul>
                     </div>
                     <p>
-                        <a href="#"><img src="./images/btn_viewmore.png" alt="전체상품보기"></a>
+                        <a href="#pop" rel="modal:open"><img src="./images/btn_viewmore.png" alt="전체상품보기"></a>
                     </p>
                 </h3>
             </section>
@@ -216,7 +256,7 @@
                         <li id="linked"><a href="javascript:void(0);" onclick="addarea(1)">#단 하나뿐인</a></li>
                         <li id="linked" ><a href="javascript:void(0);" onclick="addarea(2)">#나만의 신발</a></li>
                         <li id="linked" ><a href="javascript:void(0);" onclick="addarea(3)">#MAKE_YOUR_PRIDE</a></li>
-                        <li><a href="#"><img src="./images/btn_making.png" alt="전체영상보기"></a></li>
+                        <li><a href="#pop" rel="modal:open"><img src="./images/btn_making.png" alt="전체영상보기"></a></li>
                     </ul>
                     <figure>
                         <div class="addarea0">
@@ -226,7 +266,7 @@
                             src="https://www.youtube.com/embed/6GOGFwXwv7U"
                             title="YouTube video player"
                             frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen="allowfullscreen">
                             </iframe>
                         </div>
@@ -237,7 +277,7 @@
                             src="https://www.youtube.com/embed/pMaScpCRnbg"
                             title="YouTube video player"
                             frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen="allowfullscreen">
                             </iframe>
                         </div>
@@ -248,7 +288,7 @@
                             src="https://www.youtube.com/embed/olCdA82nxRk"
                             title="YouTube video player"
                             frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen="allowfullscreen">
                             </iframe>
                         </div>
@@ -259,7 +299,7 @@
                             src="https://www.youtube.com/embed/4EGAegRX658"
                             title="YouTube video player"
                             frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen="allowfullscreen">
                             </iframe>
                         </div>
@@ -322,7 +362,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <h3>LIFE GOES ON 반팔티</h3>
+                                    <h3>LIFE GOES ON <br>반팔티</h3>
                                 </div>
                                 <img src="./images/snsimg06.png" alt="SNS 제품06">
                             </a>
@@ -346,7 +386,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <h3>오버핏 코쿤 웰론 숏패딩</h3>
+                                    <h3>오버핏 코쿤 웰론 <br>숏패딩</h3>
                                 </div>
                             <img src="./images/snsimg09.png" alt="SNS 제품09">
                         </a>
@@ -354,7 +394,8 @@
                     </ul>
                 </div>
                 <p class="more">
-                    <a href="https://www.instagram.com/fila_korea/" target="_blank"><img src="./images/btn_viewmore.png" alt="전체리뷰보기"></a>
+                    <!-- <a href="https://www.instagram.com/fila_korea/" target="_blank"><img src="./images/btn_viewmore.png" alt="전체리뷰보기"></a> -->
+                    <a href="#pop" rel="modal:open"><img src="./images/btn_viewmore.png" alt="전체리뷰보기"></a>
                 </p>
             </section>
             <!-- /Section 03 -->
@@ -388,7 +429,10 @@
                             <img src="./images/safemark.png" alt="안전거래확인이미지">
                         </p>
                         <p>
-                            Copyright &copy; 2022 EBWEB., Ltd. All Rights Reserved
+                            &copy; 2022. EB all rights reserved.
+                        </p>
+                        <p>
+                            본 사이트는 개인용 포트폴리오 작업을 위해 제작하였으며, 홈페이지 일부 내용 및 이미지의 저작권이 따로 있음을 밝힙니다.
                         </p>
                     </div>
                 </div>
@@ -407,22 +451,13 @@
             </div>
         </footer>
         <!-- /Footer -->
-    <script>
-        let video = $('.ma_fila .mafila_detail').find('li#linked');
-        console.log(video.length);
-        let i = 0;
-        function addarea(num){
-            for(i=0;i<video.length;i++){
-                if(num==i){
-                    video.eq(i).addClass('active');
-                    $('.addarea'+i).show();
-                }else{
-                    video.eq(i).removeClass('active');
-                    $('.addarea'+i).hide();
-                }
-            }
-        }
-    </script>
+        <!-- Modal -->
+        <div id="pop" class="modal">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <p>준비 중 입니다.</p>
+        </div>
     </div>
+<!-- 동영상 스크립트 -->
+<script src="./js/fila_video.js"></script>
 </body>
 </html>
